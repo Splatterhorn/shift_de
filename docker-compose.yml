@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: pg_weather_db
+    environment:
+      POSTGRES_USER: weather_user
+      POSTGRES_PASSWORD: weather_pass
+      POSTGRES_DB: weather_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db-data:/db-data
+      - ./scripts:/scripts
+
+ 
